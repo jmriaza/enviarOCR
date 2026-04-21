@@ -1,0 +1,82 @@
+# ============================================================
+# OCR + Layout Analysis v5.7.4 — Requirements
+# ============================================================
+# Instalacion: pip install -r requirements.txt
+# Python >= 3.9 requerido
+# ============================================================
+
+# --- Manipulacion de imagenes ---
+Pillow>=10.0.0
+
+# --- Motor OCR ---
+pytesseract>=0.3.10
+
+# --- Vision por computador (CLAHE, denoise, threshold) ---
+opencv-python>=4.8.0
+
+# --- Conversion PDF a imagenes ---
+pdf2image>=1.17.0
+
+# --- Procesamiento numerico ---
+numpy>=1.24.0
+
+# --- Analisis de layout de documentos ---
+layoutparser>=0.3.4
+
+# --- Logging avanzado ---
+loguru>=0.7.0
+
+# --- Procesamiento en paralelo (batch resiliente) ---
+tqdm>=4.66.0
+
+
+# ============================================================
+# NOTAS DE INSTALACION DEL SISTEMA
+# ============================================================
+# Tesseract OCR debe instalarse a nivel de sistema:
+#
+#   Ubuntu/Debian:
+#     sudo apt-get install tesseract-ocr
+#     sudo apt-get install tesseract-ocr-spa   # soporte Español
+#
+#   macOS:
+#     brew install tesseract
+#
+#   Windows:
+#     https://github.com/UB-Mannheim/tesseract/wiki
+#
+# Poppler (requerido por pdf2image):
+#
+#   Ubuntu/Debian:
+#     sudo apt-get install poppler-utils
+#
+#   macOS:
+#     brew install poppler
+#
+#   Windows:
+#     https://github.com/oschwartz10612/poppler-windows
+# ============================================================
+
+# ============================================================
+## Resumen de dependencias
+#
+# Paquete			Versión mínima		Uso en el script
+# Pillow			10.0.0				Control MAX_IMAGE_PIXELS, manipulación de imágenes
+# pytesseract		0.3.10				Motor OCR principal
+# opencv-python	4.8.0				CLAHE LAB, denoise, threshold
+# pdf2image		1.17.0				Conversión PDF → imágenes por página
+# numpy			1.24.0				Procesamiento matricial de imágenes
+# layoutparser	0.3.4				Análisis de layout por página
+# loguru			0.7.0				Sistema de logs con separadores y cabeceras
+# pathlib2		2.3.7				Gestión de rutas y directorios de salida
+# tqdm			4.66.0				Barra de progreso en el batch
+# ============================================================
+
+## Instalación rápida
+
+# Crear entorno virtual
+python3 -m venv venv
+source venv/bin/activate      # Windows: venv\Scripts\activate
+
+# Instalar dependencias
+pip install -r requirements.txt
